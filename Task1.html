@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform Image with Buttons</title>
+    <style>
+        .nav {
+            color: black;
+            font-weight: 40px;
+            border: 1px solid black;
+            border-radius: 4px;
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            margin: 20px;
+            justify-content: center;
+        }
+        
+        .container {
+            display: flex;  /* Flexbox to center the image */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 60vh;  /* Set a fixed height for the container */
+            width: 100vw;  /* Set the width to take the full viewport width */
+            margin: 0;  /* Remove any default margin */
+        }
+
+        .container img {
+            height: 60vh;
+            width: 40vw;
+            transition: transform 0.5s ease;  /* Smooth transition for transformations */
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <button class="nav1" onclick="translateImage()">Translate</button>
+        <button class="nav2" onclick="rotateImage()">Rotate</button>
+        <button class="nav3" onclick="scaleImage()">Scale</button>
+        <button class="nav4" onclick="skewImage()">Skew</button>      
+    </div>
+    <div class="container">
+        <img src="./steak.jpg" alt="Steak Image" id="image">
+    </div>
+
+    <script>
+        const image = document.getElementById('image');
+
+        function translateImage() {
+            image.style.transform = 'translateX(45px)';
+        }
+
+        function rotateImage() {
+            image.style.transform = 'rotate(45deg)';
+        }
+
+        function scaleImage() {
+            image.style.transform = 'scale(2, 0.5)';
+        }
+
+        function skewImage() {
+            image.style.transform = 'skew(45deg)';
+        }
+    </script>
+</body>
+</html>
